@@ -42,24 +42,24 @@ public class ScoreboardHandler {
         if (sidebar != null) {
             sidebar.unregister();
         }
-//            sidebar = scoreboard.registerNewObjective("Sidebar", "Sidebar", "Sidebar");
+        sidebar = scoreboard.registerNewObjective("OravSidebar", "OravSidebar", "OravSidebar");
         // TODO: quick fixed
-        sidebar = scoreboard.registerNewObjective("Sidebar1", new Criteria() {
-            @Override
-            public String getName() {
-                return "Sidebar";
-            }
-
-            @Override
-            public boolean isReadOnly() {
-                return false;
-            }
-
-            @Override
-            public RenderType getDefaultRenderType() {
-                return RenderType.INTEGER;
-            }
-        }, "Sidebar2");
+//        sidebar = scoreboard.registerNewObjective("Sidebar1", new Criteria() {
+//            @Override
+//            public String getName() {
+//                return "OravSidebar";
+//            }
+//
+//            @Override
+//            public boolean isReadOnly() {
+//                return false;
+//            }
+//
+//            @Override
+//            public RenderType getDefaultRenderType() {
+//                return RenderType.INTEGER;
+//            }
+//        }, "Sidebar2");
         sidebar.setDisplayName("§2Minecraft §5Orav 5");
         sidebar.getScore("§5Spieltag").setScore(7);
         sidebar.getScore("§1   §8>> §7" + getDay()).setScore(6);
@@ -90,10 +90,10 @@ public class ScoreboardHandler {
 
     private void updateObjectives() {
         Scoreboard scoreboard = Bukkit.getScoreboardManager().getMainScoreboard();
-        Objective sidebar = scoreboard.getObjective("Sidebar");
+        Objective sidebar = scoreboard.getObjective("OravSidebar");
         if (sidebar == null) {
             registerObjectives();
-            sidebar = scoreboard.getObjective("Sidebar");
+            sidebar = scoreboard.getObjective("OravSidebar");
         }
         for (String entry : scoreboard.getEntries()) {
             if (sidebar.getScore(entry).getScore() == 6) {
