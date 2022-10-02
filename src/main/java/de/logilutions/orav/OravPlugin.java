@@ -83,7 +83,13 @@ public class OravPlugin extends JavaPlugin {
             }
         }
         TabList tabList = new TabList();
-        this.discordUtil = new DiscordUtil("https://discord.com/api/webhooks/912863008508760095/PYhV2onPsh-geKovWFeOSIWUt7_kh8rO27gTV796jtOIFHNyQz6kXEpxZPRxC2-dKDUh");
+        ConfigurationSection discordSection = config.getConfigurationSection("discord");
+
+        if (discordSection == null) {
+            getLogger().warning("Discord webhook not configurated! Please fill out the config.yml!");
+        } else {
+            this.discordUtil = new DiscordUtil(discordSection.getString("url"));
+        }
         this.scoreboardHandler = new ScoreboardHandler(this.oravPlayerManager, tabList, orav,this,databaseHandler);
         this.fightingObserver = new FightingObserver(this, oravPlayerManager, this.messageManager, playerFightLogoutConfig, orav);
         //TODO radius per config
