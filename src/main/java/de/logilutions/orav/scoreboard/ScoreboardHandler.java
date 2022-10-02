@@ -10,10 +10,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.scoreboard.DisplaySlot;
-import org.bukkit.scoreboard.Objective;
-import org.bukkit.scoreboard.Scoreboard;
-import org.bukkit.scoreboard.Team;
+import org.bukkit.scoreboard.*;
 
 import java.time.Duration;
 import java.time.LocalDate;
@@ -45,7 +42,24 @@ public class ScoreboardHandler {
         if (sidebar != null) {
             sidebar.unregister();
         }
-            sidebar = scoreboard.registerNewObjective("Sidebar", "Sidebar", "Sidebar");
+//            sidebar = scoreboard.registerNewObjective("Sidebar", "Sidebar", "Sidebar");
+        // TODO: quick fixed
+        sidebar = scoreboard.registerNewObjective("Sidebar", new Criteria() {
+            @Override
+            public String getName() {
+                return "Sidebar";
+            }
+
+            @Override
+            public boolean isReadOnly() {
+                return false;
+            }
+
+            @Override
+            public RenderType getDefaultRenderType() {
+                return RenderType.INTEGER;
+            }
+        }, "Sidebar");
         sidebar.setDisplayName("§2Minecraft §5Orav 5");
         sidebar.getScore("§5Spieltag").setScore(7);
         sidebar.getScore("§1   §8>> §7" + getDay()).setScore(6);
