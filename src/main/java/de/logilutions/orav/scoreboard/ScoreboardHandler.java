@@ -44,7 +44,7 @@ public class ScoreboardHandler {
         }
 //            sidebar = scoreboard.registerNewObjective("Sidebar", "Sidebar", "Sidebar");
         // TODO: quick fixed
-        sidebar = scoreboard.registerNewObjective("Sidebar", new Criteria() {
+        sidebar = scoreboard.registerNewObjective("Sidebar1", new Criteria() {
             @Override
             public String getName() {
                 return "Sidebar";
@@ -59,7 +59,7 @@ public class ScoreboardHandler {
             public RenderType getDefaultRenderType() {
                 return RenderType.INTEGER;
             }
-        }, "Sidebar");
+        }, "Sidebar2");
         sidebar.setDisplayName("§2Minecraft §5Orav 5");
         sidebar.getScore("§5Spieltag").setScore(7);
         sidebar.getScore("§1   §8>> §7" + getDay()).setScore(6);
