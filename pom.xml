@@ -4,6 +4,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub konrad2002 Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/konrad2002/ORAV-Plugin</url>
+        </repository>
+    </distributionManagement>
+
+
     <groupId>de.logilutions</groupId>
     <artifactId>Orav</artifactId>
     <version>1.0.0-SNAPSHOT</version>
