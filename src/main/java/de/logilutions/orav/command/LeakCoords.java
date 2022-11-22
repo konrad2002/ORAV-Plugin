@@ -45,7 +45,7 @@ public class LeakCoords implements CommandExecutor {
         int x = location.getBlockX();
         int y = location.getBlockY();
         int z = location.getBlockZ();
-        String message = player.getDisplayName() + " befindet sich bei x: " + x + "; y: " + y + "; z: " + z + ".";
+        String message = player.getName() + " befindet sich bei x: " + x + "; y: " + y + "; z: " + z + ".";
         String message_colored = "§e" + player.getName() + "§7 befindet sich bei x: §b" + x + "§7; y: §b" + y + "§7; z: §b" + z + "§7.";
         this.messageManager.broadcast(Bukkit.getOnlinePlayers(), message_colored);
 

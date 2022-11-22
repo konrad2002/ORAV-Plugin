@@ -72,27 +72,27 @@ public class ProtectionTimeRunnable implements Runnable {
         }
 
         if (remainingMillis <= 60 * 1000 && lastRemaining > 60 * 1000) {
-            sendMessage("Die Schutzzeit endet in%hc%1 Minute§7!");
+            sendMessage("Die Schutzzeit endet in %hc%1 Minute§7!");
         }
 
         if (remainingMillis <= 30 * 1000 && lastRemaining > 30 * 1000) {
-            sendMessage("Die Schutzzeit endet in%hc%30 Sekunden§7!");
+            sendMessage("Die Schutzzeit endet in %hc%30 Sekunden§7!");
         }
 
         if (remainingMillis <= 10 * 1000 && lastRemaining > 10 * 1000) {
-            sendMessage("Die Schutzzeit endet in%hc%10 Sekunden§7!");
+            sendMessage("Die Schutzzeit endet in %hc%10 Sekunden§7!");
         }
 
         if (remainingMillis <= 3 * 1000 && lastRemaining > 3 * 1000) {
-            sendMessage("Die Schutzzeit endet in%hc%3 Sekunden§7!");
+            sendMessage("Die Schutzzeit endet in %hc%3 Sekunden§7!");
         }
 
         if (remainingMillis <= 2 * 1000 && lastRemaining > 2 * 1000) {
-            sendMessage("Die Schutzzeit endet in%hc%2 Sekunden§7!");
+            sendMessage("Die Schutzzeit endet in %hc%2 Sekunden§7!");
         }
 
         if (remainingMillis <= 1000 && lastRemaining > 1000) {
-            sendMessage("Die Schutzzeit endet in%hc%1 Sekunde§7!");
+            sendMessage("Die Schutzzeit endet in %hc%1 Sekunde§7!");
         }
         if (remainingMillis <= 0) {
             removeBossBar();

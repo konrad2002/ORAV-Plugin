@@ -39,28 +39,15 @@ public class ScoreboardHandler {
     private void registerObjectives() {
         Scoreboard scoreboard = Bukkit.getScoreboardManager().getMainScoreboard();
         Objective sidebar = scoreboard.getObjective(DisplaySlot.SIDEBAR);
+        if (sidebar == null) {
+            sidebar = scoreboard.getObjective("OravSidebar");
+        }
         if (sidebar != null) {
             sidebar.unregister();
         }
-        sidebar = scoreboard.registerNewObjective("OravSidebar", "OravSidebar", "OravSidebar");
-        // TODO: quick fixed
-//        sidebar = scoreboard.registerNewObjective("Sidebar1", new Criteria() {
-//            @Override
-//            public String getName() {
-//                return "OravSidebar";
-//            }
-//
-//            @Override
-//            public boolean isReadOnly() {
-//                return false;
-//            }
-//
-//            @Override
-//            public RenderType getDefaultRenderType() {
-//                return RenderType.INTEGER;
-//            }
-//        }, "Sidebar2");
-        sidebar.setDisplayName("§2Minecraft §5Orav 5");
+        sidebar = scoreboard.registerNewObjective("OravSidebar", Criteria.DUMMY, "OravSidebar");
+
+        sidebar.setDisplayName("§2Minecraft §5Orav 6");
         sidebar.getScore("§5Spieltag").setScore(7);
         sidebar.getScore("§1   §8>> §7" + getDay()).setScore(6);
         sidebar.getScore("§5Weltgröße").setScore(5);
