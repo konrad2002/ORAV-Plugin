@@ -4,6 +4,9 @@ database:
   user:
   password:
 
+discord:
+  url:
+
 current-orav:
 start-spawn:
   x:

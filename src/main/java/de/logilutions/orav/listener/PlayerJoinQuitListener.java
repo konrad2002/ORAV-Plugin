@@ -51,7 +51,7 @@ public class PlayerJoinQuitListener implements Listener {
         OravPlayer oravPlayer = oravPlayerManager.getPlayer(event.getUniqueId());
         if (oravPlayer == null) {
             event.setLoginResult(AsyncPlayerPreLoginEvent.Result.KICK_OTHER);
-            event.setKickMessage("§aDiesen Server dürfen nur angemeldete Spieler von Minecraft §5ORAV #5 §abetreten!");
+            event.setKickMessage("§aDiesen Server dürfen nur angemeldete Spieler von Minecraft §5ORAV #6 §abetreten!");
         }
     }
 
@@ -64,7 +64,7 @@ public class PlayerJoinQuitListener implements Listener {
         OravPlayer oravPlayer = oravPlayerManager.getPlayer(player.getUniqueId());
         if (orav.getState() == Orav.State.DEVELOPING) {
             if (!player.isOp()) {
-                player.kickPlayer("§aMinecraft §5ORAV #5 §ahat noch nicht begonnen!");
+                player.kickPlayer("§aMinecraft §5ORAV #6 §ahat noch nicht begonnen!");
             }
             scoreboardHandler.playerSpawned(player);
             event.setJoinMessage(player.getDisplayName() + "§e hat den Server betreten!");
@@ -131,7 +131,7 @@ public class PlayerJoinQuitListener implements Listener {
                 "https://visage.surgeplay.com/face/" + player.getUniqueId());
 
         if (databaseHandler.getSessions(oravPlayer).size() == 1 && (orav.getState() == Orav.State.RUNNING||orav.getState() == Orav.State.PROTECTION)) {
-            System.out.println("start ORav for Player " + player.getName());
+            System.out.println("start Orav for Player " + player.getName());
             oravStart.startOrav(player);
         } else {
             oravStart.startProtectionTime(player);

@@ -112,7 +112,7 @@ public class MessageManager {
      * Default TitleStayLength: 40 <br>
      */
     public MessageManager() {
-        this.setPrefix("§8[§5ORAV5§8]§7");
+        this.setPrefix("§8[§5ORAV6§8]§7");
         this.setEnabledPrefix(true);
         this.setBaseColor(ChatColor.GRAY);
         this.setHighlightColor(ChatColor.YELLOW);

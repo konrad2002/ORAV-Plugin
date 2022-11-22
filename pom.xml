@@ -4,18 +4,27 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub konrad2002 Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/konrad2002/ORAV-Plugin</url>
+        </repository>
+    </distributionManagement>
+
+
     <groupId>de.logilutions</groupId>
-    <artifactId>Orav</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <artifactId>orav</artifactId>
+    <version>2.0.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>14</maven.compiler.source>
-        <maven.compiler.target>14</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <version.spigot>1.17.1-R0.1-SNAPSHOT</version.spigot>
+        <version.spigot>1.19.2-R0.1-SNAPSHOT</version.spigot>
         <version.hibernate>5.6.1.Final</version.hibernate>
-        <version.lombok>1.18.22</version.lombok>
+        <version.lombok>1.18.24</version.lombok>
         <version.java-servlet>4.0.1</version.java-servlet>
         <version.hikaricp>3.4.5</version.hikaricp>
         <version.javax-validation>2.0.1.Final</version.javax-validation>
@@ -40,7 +49,7 @@
     <dependencies>
         <dependency>
             <groupId>org.spigotmc</groupId>
-            <artifactId>spigot</artifactId>
+            <artifactId>spigot-api</artifactId>
             <version>${version.spigot}</version>
             <scope>provided</scope>
         </dependency>
