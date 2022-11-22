@@ -5,11 +5,11 @@ name: Maven Package
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "master", "develop" ]
     # Publish semver tags as releases.
     tags: [ 'v*.*.*' ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "master", "develop" ]
   workflow_dispatch:
 
 jobs:
