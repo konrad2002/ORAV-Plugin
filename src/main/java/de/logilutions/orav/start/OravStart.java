@@ -113,12 +113,12 @@ public class OravStart extends Config {
                     player.setStatistic(Statistic.TIME_SINCE_REST, 0);
                     player.getInventory().clear();
                     player.playSound(player.getLocation(), Sound.ENTITY_WITHER_SPAWN, 1, 1);
-                    messageManager.sendMessage(player, "Orav5 ist gestartet!");
-                    messageManager.sendTitle(player, "§5Orav 5", "§7gestartet!");
+                    messageManager.sendMessage(player, "Orav 6 ist gestartet!");
+                    messageManager.sendTitle(player, "§5Orav 6", "§7gestartet!");
                 }
                 startProtectionTime();
                 discordUtil.send(
-                        "Minecraft ORAV #5", "Das Projekt Minecraft Orav #5 hat soeben begonnen!", "https://logilutions.de/Minecraft/ORAV-5/images/start.png",
+                        "Minecraft ORAV #6", "Das Projekt Minecraft Orav #6 hat soeben begonnen!", "https://logilutions.de/Minecraft/ORAV-5/images/start.png",
                         Color.GREEN, null, null, null);
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "weather clear");
             });
@@ -178,11 +178,11 @@ public class OravStart extends Config {
 
         long millis = 0;
         if (protectedUntil.containsKey(player.getUniqueId())) {
-            Duration remainig = Duration.between(LocalDateTime.now(), protectedUntil.get(player.getUniqueId()));
-            if (remainig.isNegative()) {
+            Duration remaining = Duration.between(LocalDateTime.now(), protectedUntil.get(player.getUniqueId()));
+            if (remaining.isNegative()) {
                 return;
             }
-            millis = remainig.toMillis();
+            millis = remaining.toMillis();
         } else {
             if (databaseHandler.getSessions(oravPlayer).size() == 1 && !orav.getStartDate().toLocalDate().isEqual(LocalDate.now())) {
                 millis = orav.getProtectionTimeAfterDayOne() * 60 * 1000;

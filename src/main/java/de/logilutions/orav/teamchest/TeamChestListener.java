@@ -45,7 +45,7 @@ public class TeamChestListener implements Listener {
         if (!hasChestAccess(oravPlayer, teamId)) {
             event.setCancelled(true);
             OravTeam oravTeam = databaseHandler.readTeam(teamId);
-            event.getPlayer().sendMessage(messageManager.getPrefix() + " " + "Das ist die TeamKiste von "
+            event.getPlayer().sendMessage(messageManager.getPrefix() + " " + "Das ist die Teamkiste von "
                     + oravTeam.getTeamColor().getChatColor().toString() + oravTeam.getName());
         }
     }
@@ -93,7 +93,7 @@ public class TeamChestListener implements Listener {
         } else {
             event.setCancelled(true);
             OravTeam oravTeam = databaseHandler.readTeam(teamId);
-            event.getPlayer().sendMessage(messageManager.getPrefix() + " " + "Das ist die TeamKiste von "
+            event.getPlayer().sendMessage(messageManager.getPrefix() + " " + "Das ist die Teamkiste von "
                     + oravTeam.getTeamColor().getChatColor().toString() + oravTeam.getName());
         }
     }

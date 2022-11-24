@@ -63,16 +63,16 @@ public class OravCommand implements CommandExecutor, TabCompleter {
                         return true;
                     }
                     oravStart.startOrav();
-                    messageManager.sendMessage(player, "Orav wurde gestartet!");
+                    messageManager.sendMessage(player, "ORAV wurde gestartet!");
                     break;
                 case "preparation":
                     if (orav.getState() != Orav.State.DEVELOPING) {
-                        messageManager.sendMessage(player, "%ec%Orav wurde bereits in die Vorbereitungsphase gesetzt!");
+                        messageManager.sendMessage(player, "%ec%ORAV wurde bereits in die Vorbereitungsphase gesetzt!");
                         return true;
                     }
                     orav.setState(Orav.State.PREPARATION);
                     databaseHandler.updateOrav(orav);
-                    messageManager.sendMessage(player, "Orav wurde gestartet!");
+                    messageManager.sendMessage(player, "ORAV wurde gestartet!");
                     break;
             }
         }
