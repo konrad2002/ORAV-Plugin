@@ -31,7 +31,7 @@ public class ProtectionTimeRunnable implements Runnable {
         this.startMillis = this.remainingMillis;
         this.messageManager = messageManager;
         this.onEnd = onEnd;
-        this.oravPlayers = new ArrayList<>(oravPlayers);
+        this.oravPlayers = new ArrayList<>();
         this.bossBar = Bukkit.createBossBar("§7Verbleibende Schutzzeit: §6" + (remainingMillis / (60 * 1000)) + " Minuten", BarColor.RED, BarStyle.SEGMENTED_20);
         for (OravPlayer oravPlayer : oravPlayers) {
             addPlayer(oravPlayer);
@@ -107,9 +107,7 @@ public class ProtectionTimeRunnable implements Runnable {
     }
 
     private void sendMessage(String s) {
-        System.out.println("Send Message to " + oravPlayers.size() + " players!");
         for (OravPlayer oravPlayer : oravPlayers) {
-            System.out.println("Send Message '"+s+"' to " + oravPlayer.getUuid());
             Player player = oravPlayer.getPlayer();
             if (player == null) {
                 oravPlayers.remove(oravPlayer);
