@@ -57,7 +57,7 @@ public class StartCountDownRunnable implements Runnable {
             sendInfo("3 Minuten", Sound.BLOCK_NOTE_BLOCK_PLING, 1);
         }
 
-        if (remainingMillis <= 2 * 60 * 1000 && lastRemaining > 52 * 60 * 1000) {
+        if (remainingMillis <= 2 * 60 * 1000 && lastRemaining > 2 * 60 * 1000) {
             sendInfo("2 Minuten", Sound.BLOCK_NOTE_BLOCK_PLING, 1);
         }
 

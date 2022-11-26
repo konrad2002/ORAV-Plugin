@@ -118,7 +118,7 @@ public class OravStart extends Config {
                 }
                 startProtectionTime();
                 discordUtil.send(
-                        "Minecraft ORAV #6", "Das Projekt Minecraft Orav #6 hat soeben begonnen!", "https://logilutions.de/Minecraft/ORAV-5/images/start.png",
+                        "Minecraft ORAV #6", "Das Projekt Minecraft Orav #6 hat soeben begonnen!", "https://mc.logilutions.dev/orav/6/images/main_title.png",
                         Color.GREEN, null, null, null);
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "weather clear");
             });

@@ -17,13 +17,15 @@ public class DiscordUtil {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
         String date = LocalDateTime.now().format(dateTimeFormatter);
 
-        discordWebhook.setContent(date);
+//        discordWebhook.setContent(date);
 
         DiscordWebhook.EmbedObject embedObject = new DiscordWebhook.EmbedObject();
         if (title != null) embedObject.setTitle(title);
         if (description != null) embedObject.setDescription(description);
         if (image != null) embedObject.setImage(image);
         if (color != null) embedObject.setColor(color);
+
+        embedObject.setFooter(date, null);
 
         if (authorImage != null || authorUrl != null || authorName != null) {
             if (authorName == null) authorName = "";
