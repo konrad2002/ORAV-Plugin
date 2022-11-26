@@ -191,7 +191,6 @@ public class OravStart extends Config {
         if (millis == 0) {
             return;
         }
-        System.out.println("Start protection time for player " + player.getName() + " for " + millis + " millis");
         Scheduler scheduler = new Scheduler();
         scheduler.setBukkitTask(Bukkit.getScheduler().runTaskTimerAsynchronously(javaPlugin, new ProtectionTimeRunnable(
                 millis,
