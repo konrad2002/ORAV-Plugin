@@ -19,10 +19,7 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 public class OravStart extends Config {
     private final Orav orav;
@@ -79,11 +76,11 @@ public class OravStart extends Config {
             }
         } else if (orav.getState() == Orav.State.PROTECTION) {
             player.setGameMode(GameMode.SURVIVAL);
-            startProtectionTime(player);
+            startProtectionTime(player,true);
         } else {
             player.setGameMode(GameMode.SURVIVAL);
             protectedUntil.remove(player.getUniqueId());
-            startProtectionTime(player);
+            startProtectionTime(player,true);
         }
     }
 
@@ -166,7 +163,7 @@ public class OravStart extends Config {
         protectionScheduler.setBukkitTask(Bukkit.getScheduler().runTaskTimerAsynchronously(javaPlugin, protectionTimeRunnable, 0, 20));
     }
 
-    public void startProtectionTime(Player player) {
+    public void startProtectionTime(Player player, boolean all) {
         OravPlayer oravPlayer = oravPlayerManager.getPlayer(player.getUniqueId());
         if (orav.getState() == Orav.State.PROTECTION && protectionTimeRunnable != null) {
             protectionTimeRunnable.addPlayer(oravPlayer);
@@ -195,11 +192,18 @@ public class OravStart extends Config {
             return;
         }
 
+        Set<OravPlayer> protectedPlayers;
+        if(all){
+            protectedPlayers = new HashSet<>(this.oravPlayerManager.getAll());
+        }else{
+            protectedPlayers = Set.of(oravPlayer);
+        }
+
         Scheduler scheduler = new Scheduler();
         scheduler.setBukkitTask(Bukkit.getScheduler().runTaskTimerAsynchronously(javaPlugin, new ProtectionTimeRunnable(
                 millis,
                 messageManager,
-                new HashSet<>(oravPlayerManager.getAll()),
+                protectedPlayers,
                 v -> scheduler.cancel()
         ), 0, 20));
     }

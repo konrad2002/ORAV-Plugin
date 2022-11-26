@@ -135,7 +135,7 @@ public class PlayerJoinQuitListener implements Listener {
             System.out.println("start Orav for Player " + player.getName());
             oravStart.startOrav(player);
         } else {
-            oravStart.startProtectionTime(player);
+            oravStart.startProtectionTime(player,false);
         }
 
 
