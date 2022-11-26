@@ -75,6 +75,7 @@ public class PlayerJoinQuitListener implements Listener {
         if (orav.getState() == Orav.State.PREPARATION) {
             oravPlayer.setHasValidSession(true);
             player.teleport(Bukkit.getWorlds().get(0).getSpawnLocation());
+            System.out.println(Bukkit.getWorlds().get(0).getSpawnLocation());
             player.setGameMode(GameMode.ADVENTURE);
             scoreboardHandler.playerSpawned(player);
             event.setJoinMessage(player.getDisplayName() + "§e hat den Server betreten!");
