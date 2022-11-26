@@ -107,7 +107,9 @@ public class ProtectionTimeRunnable implements Runnable {
     }
 
     private void sendMessage(String s) {
+        System.out.println("Send Message to " + oravPlayers.size() + " players!");
         for (OravPlayer oravPlayer : oravPlayers) {
+            System.out.println("Send Message '"+s+"' to " + oravPlayer.getUuid());
             Player player = oravPlayer.getPlayer();
             if (player == null) {
                 oravPlayers.remove(oravPlayer);
