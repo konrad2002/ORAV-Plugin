@@ -29,7 +29,7 @@ public class StartCountDownRunnable implements Runnable {
     public StartCountDownRunnable(MessageManager messageManager, Consumer<Void> onEnd) {
         this.messageManager = messageManager;
         this.onEnd = onEnd;
-        this.bossBar = Bukkit.createBossBar("§2Minecraft §5Orav 6 §7startet in: §65 Minuten", BarColor.PURPLE, BarStyle.SEGMENTED_20);
+        this.bossBar = Bukkit.createBossBar("§2Minecraft §5Orav 7 §7startet in: §65 Minuten", BarColor.PURPLE, BarStyle.SEGMENTED_20);
         for (Player player : Bukkit.getOnlinePlayers()) {
             addPlayer(player);
         }
@@ -98,9 +98,9 @@ public class StartCountDownRunnable implements Runnable {
     private void sendInfo(String time, Sound sound, float pitch) {
         for (Player player : Bukkit.getOnlinePlayers()) {
             if (player != null && player.isOnline()) {
-                messageManager.sendMessage(player, "Orav 6 startet in %hc%" + time + "§7!");
+                messageManager.sendMessage(player, "Orav 7 startet in %hc%" + time + "§7!");
                 player.playSound(player.getLocation(), sound, 1, pitch);
-                messageManager.sendTitle(player, "§5Orav 6 §6startet in", "§7" + time);
+                messageManager.sendTitle(player, "§5Orav 7 §6startet in", "§7" + time);
             }
         }
     }
@@ -122,13 +122,13 @@ public class StartCountDownRunnable implements Runnable {
             if (minutes > 1) {
                 builder.append("n");
             }
-            bossBar.setTitle("§2Minecraft §5Orav 6 §7startet in: §6" + builder.toString());
+            bossBar.setTitle("§2Minecraft §5Orav 7 §7startet in: §6" + builder.toString());
         } else {
             StringBuilder builder = new StringBuilder(seconds + " Sekunde");
             if (seconds > 1) {
                 builder.append("n");
             }
-            bossBar.setTitle("§2Minecraft §5Orav 6 §7startet in: §6" + builder.toString());
+            bossBar.setTitle("§2Minecraft §5Orav 7 §7startet in: §6" + builder.toString());
         }
         bossBar.setProgress((float) remainingMillis / (float) startMillis);
     }

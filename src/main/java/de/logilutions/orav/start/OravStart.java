@@ -113,12 +113,12 @@ public class OravStart extends Config {
                     player.setStatistic(Statistic.TIME_SINCE_REST, 0);
                     player.getInventory().clear();
                     player.playSound(player.getLocation(), Sound.ENTITY_WITHER_SPAWN, 1, 1);
-                    messageManager.sendMessage(player, "Orav 6 ist gestartet!");
-                    messageManager.sendTitle(player, "§5Orav 6", "§7gestartet!");
+                    messageManager.sendMessage(player, "Orav 7 ist gestartet!");
+                    messageManager.sendTitle(player, "§5Orav 7", "§7gestartet!");
                 }
                 startProtectionTime();
                 discordUtil.send(
-                        "Minecraft ORAV #6", "Das Projekt Minecraft Orav #6 hat soeben begonnen!", "https://mc.logilutions.dev/orav/6/images/main_title.png",
+                        "Minecraft ORAV #7", "Das Projekt Minecraft Orav #7 hat soeben begonnen!", "https://mc.logilutions.dev/orav/7/images/title_7.png",
                         Color.GREEN, null, null, null);
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "weather clear");
             });

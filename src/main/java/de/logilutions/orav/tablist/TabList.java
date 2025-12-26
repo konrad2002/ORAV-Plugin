@@ -11,13 +11,13 @@ public class TabList {
 
     private Map<Integer, String> messages = new HashMap<>(); //TODO config
     private int currentMessage = 0;
-    private String header = "\n§2Minecraft §5ORAV 6\n";
+    private String header = "\n§2Minecraft §5ORAV 7\n";
 
     public TabList() {
         messages.put(0, "\n        §7Sponsored by Coernerbrot        \n");
-        messages.put(1, "\n    §7Spawn by MPP and WGW Builder Team    \n");
-        messages.put(2, "\n  §7Idea and Organisation by Coernerbrot  \n");
-        messages.put(3, "\n  §7Developed by Coernerbrot and FREE2WIN  \n");
+        //messages.put(1, "\n    §7Spawn by MPP and WGW Builder Team    \n");
+        messages.put(1, "\n  §7Idea and Organisation by Coernerbrot  \n");
+        messages.put(2, "\n  §7Developed by Coernerbrot and FREE2WIN  \n");
     }
 
     public void start(JavaPlugin javaPlugin) {

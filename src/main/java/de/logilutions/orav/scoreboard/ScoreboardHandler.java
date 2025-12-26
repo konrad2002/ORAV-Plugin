@@ -47,7 +47,7 @@ public class ScoreboardHandler {
         }
         sidebar = scoreboard.registerNewObjective("OravSidebar", Criteria.DUMMY, "OravSidebar");
 
-        sidebar.setDisplayName("§2Minecraft §5Orav 6");
+        sidebar.setDisplayName("§2Minecraft §5Orav 7");
         sidebar.getScore("§5Spieltag").setScore(7);
         sidebar.getScore("§1   §8>> §7" + getDay()).setScore(6);
         sidebar.getScore("§5Weltgröße").setScore(5);

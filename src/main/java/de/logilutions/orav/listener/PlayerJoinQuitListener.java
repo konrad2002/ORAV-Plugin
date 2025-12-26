@@ -51,7 +51,7 @@ public class PlayerJoinQuitListener implements Listener {
         OravPlayer oravPlayer = oravPlayerManager.getPlayer(event.getUniqueId());
         if (oravPlayer == null) {
             event.setLoginResult(AsyncPlayerPreLoginEvent.Result.KICK_OTHER);
-            event.setKickMessage("§aDiesen Server dürfen nur angemeldete Spieler von Minecraft §5ORAV #6 §abetreten!");
+            event.setKickMessage("§aDiesen Server dürfen nur angemeldete Spieler von Minecraft §5ORAV #7 §abetreten!");
         }
     }
 
@@ -64,7 +64,7 @@ public class PlayerJoinQuitListener implements Listener {
         OravPlayer oravPlayer = oravPlayerManager.getPlayer(player.getUniqueId());
         if (orav.getState() == Orav.State.DEVELOPING) {
             if (!player.isOp()) {
-                player.kickPlayer("§aMinecraft §5ORAV #6 §ahat noch nicht begonnen!");
+                player.kickPlayer("§aMinecraft §5ORAV #7 §ahat noch nicht begonnen!");
             }
             scoreboardHandler.playerSpawned(player);
             event.setJoinMessage(player.getDisplayName() + "§e hat den Server betreten!");
