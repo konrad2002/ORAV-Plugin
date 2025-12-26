@@ -31,8 +31,8 @@ public class ProtectionTimeRunnable implements Runnable {
         this.startMillis = this.remainingMillis;
         this.messageManager = messageManager;
         this.onEnd = onEnd;
-        this.oravPlayers = oravPlayers;
-        this.bossBar = Bukkit.createBossBar("§7Verbleibende Schutzzeit: §6" + remainingMillis / (60 * 1000) + " Minuten", BarColor.RED, BarStyle.SEGMENTED_20);
+        this.oravPlayers = new ArrayList<>();
+        this.bossBar = Bukkit.createBossBar("§7Verbleibende Schutzzeit: §6" + (remainingMillis / (60 * 1000)) + " Minuten", BarColor.RED, BarStyle.SEGMENTED_20);
         for (OravPlayer oravPlayer : oravPlayers) {
             addPlayer(oravPlayer);
         }

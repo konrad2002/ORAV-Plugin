@@ -19,10 +19,7 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 public class OravStart extends Config {
     private final Orav orav;
@@ -187,19 +184,18 @@ public class OravStart extends Config {
             if (databaseHandler.getSessions(oravPlayer).size() == 1 && !orav.getStartDate().toLocalDate().isEqual(LocalDate.now())) {
                 millis = orav.getProtectionTimeAfterDayOne() * 60 * 1000;
             } else if (databaseHandler.getSessions(oravPlayer).size() == 1 && orav.getStartDate().toLocalDate().isEqual(LocalDate.now())) {
-                millis = orav.getPlayTimeDayOne() * 60 * 1000;
+                millis = orav.getProtectionTime() * 60 * 1000;
             }
             protectedUntil.put(player.getUniqueId(), LocalDateTime.now().plus(millis, ChronoUnit.MILLIS));
         }
         if (millis == 0) {
             return;
         }
-
         Scheduler scheduler = new Scheduler();
         scheduler.setBukkitTask(Bukkit.getScheduler().runTaskTimerAsynchronously(javaPlugin, new ProtectionTimeRunnable(
                 millis,
                 messageManager,
-                new HashSet<>(oravPlayerManager.getAll()),
+                Set.of(oravPlayer),
                 v -> scheduler.cancel()
         ), 0, 20));
     }
